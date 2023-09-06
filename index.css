@@ -312,10 +312,13 @@
     flex: 1 1 350px;
   }
   .Projects{
-    margin: 10px;
+    margin: 20px;
   }
   .pro{
     font-size: 20px;
+  }
+  .title{
+    font-size: 16px;
   }
   .left-side {
     width: 100%;
@@ -323,6 +326,7 @@
   .text{
     padding: 10px 0px;
     text-align: justify;
+    font-size: 12px;
   }
   .contact {
     font-size: 20px;
@@ -341,7 +345,7 @@
   .icon{
    
       color: white;
-      font-size: 20px;
+      font-size: 20spx;
       margin: 10px;
       cursor: pointer;
     
