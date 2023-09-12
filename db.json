@@ -1,0 +1,20 @@
+{
+  "user": [
+    {
+      "name": "Malik Ahad Ali",
+      "title": "MEAN Developer",
+      "email": "malikahad@gmail.com",
+      "number": "03184350226",
+      "address": "Lahore Cantt",
+      "password": "12345",
+      "about": "Hi,This is Malik Zahid Hussain.I am a MEAN Developer.I complete my graducation from lahore garission university.",
+      "projectNames": "GoFood",
+      "exp": "SeeBiz,FocusTeck",
+      "skill": "HTML,CSS,JS,React Js,Tailwind CSS,Node js",
+      "edu": "Matric,Inter,BSCS",
+      "profileImage": "../assets/myPic.jpg",
+      "id": 1
+    }
+  ],
+  "projects": []
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="stylesheet" href="../Form.css" />
+    <script src="../index.js"></script>
+    <title>Profile</title>
+</head>
+
+<body>
+    <main class="main">
+        <h1 class="pro">Complete You Profile</h1>
+        <form class="form profileForm">
+            <div class="rows">
+                <div class="row">
+                    <label class="label" for="title">Title</label>
+                    <input id="title" type="text" placeholder="Enter Your Title" />
+                    <button onclick="setValue('title')" class="bt">Add</button>
+                </div>
+
+                <div class="row">
+                    <label class="label" for="project">Project</label>
+                    <input id="projectNames" type="text" placeholder="Enter Your Project Title" />
+                    <button onclick="setValue('project')" class="bt">Add</button>
+                </div>
+            </div>
+
+            <div class="rows">
+                <div class="row">
+                    <label class="label" for="experience">Experience</label>
+                    <input id="exp" type="text" placeholder="Enter Your Work Experience" />
+                    <button onclick="setValue('exp')" class="bt">Add</button>
+                </div>
+
+                <div class="row">
+                    <label class="label" for="edu">Education</label>
+                    <input id="edu" type="text" placeholder="Enter the Name of Institute" />
+                    <button onclick="setValue('edu')" class="bt">Add</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <label class="label" for="skills">Skill</label>
+                <input id="skill"  type="text" placeholder="Enter Your Skills" />
+                <button onclick="setValue('skill')" class="bt">Add</button>
+            </div>
+
+            <div class="row">
+                <label class="label" for="about">About</label>
+                <input id="about"  type="text" placeholder="Enter Your About" />
+                <button onclick="setValue('about')" class="bt">Add</button>
+            </div>
+        </form>
+
+        <button  onclick="goToHome()" class="outerButton">Next</button>
+    </main>
+</body>
+
+</html>

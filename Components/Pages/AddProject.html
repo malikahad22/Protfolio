@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="updateProfile.css">
+    <script src="../index.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="addProject">
+
+        <h1 class="pro">Add Your Project</h1>
+
+        <div class="project">
+            <div class="info">
+                <label for="title">Add Project Title:</label>
+                <input id="title" type="text" placeholder="Enter Your Project Title" />
+            </div>
+
+            <div class="info">
+                <label for="description">Add Project Disription:</label>
+                <input id="description" type="text" placeholder="Enter Your Project Description" />
+            </div>
+            <div class="info">
+                <label for="description">FrameWork:</label>
+                <input id="framework" type="text" placeholder="Enter Your Project FrameWork" />
+            </div>
+
+            <div class="info">
+                <label for="description">Add Project Tags:</label>
+                <input id="tags" type="text" placeholder="Enter Your Project Tags " />
+                <button class="btn bt" id="tag" onclick="setTag()">Add</button>
+            </div>
+
+
+            <div class="info">
+                <label for="source">Source Code:</label>
+                <input id="code" type="text" placeholder="paste url of your code" />
+            </div>
+
+            <div class="info">
+                <label for="demo">See Live:</label>
+                <input id="live" type="text" placeholder="paste url of your project">
+            </div>
+
+            <div class="info img">
+                <label for="upload-image">Upload Project Image:</label>
+                <input   id="input_file" type="text" placeholder="Enter the local path of Image">
+            </div>
+            <div class="buttons info">
+                <button onclick="addProject()" class="btn">Add</button>
+                <button onclick="goHome()" class="btn">Next</button>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>
