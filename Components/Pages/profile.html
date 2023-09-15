@@ -17,45 +17,49 @@
             <div class="rows">
                 <div class="row">
                     <label class="label" for="title">Title</label>
-                    <input id="title" type="text" placeholder="Enter Your Title" />
+                    <input id="title" type="text" pattern="/^[A-Za-z]+$/" placeholder="Enter Your Title" />
                     <button onclick="setValue('title')" class="bt">Add</button>
                 </div>
 
                 <div class="row">
-                    <label class="label" for="project">Project</label>
-                    <input id="projectNames" type="text" placeholder="Enter Your Project Title" />
-                    <button onclick="setValue('project')" class="bt">Add</button>
+                    <label class="label" for="about">About</label>
+                    <input id="about" type="text" pattern="/^[A-Za-z]+$/" placeholder="Enter Your About" />
+                    <button onclick="setValue('about')" class="bt">Add</button>
                 </div>
             </div>
 
             <div class="rows">
                 <div class="row">
-                    <label class="label" for="experience">Experience</label>
-                    <input id="exp" type="text" placeholder="Enter Your Work Experience" />
+                    <label class="label" for="exp">Experience</label>
+                    <input id="exp" type="text" pattern="/^[A-Za-z,]+$/" placeholder="Enter Your Work Experience" />
                     <button onclick="setValue('exp')" class="bt">Add</button>
                 </div>
 
                 <div class="row">
                     <label class="label" for="edu">Education</label>
-                    <input id="edu" type="text" placeholder="Enter the Name of Institute" />
+                    <input id="edu" type="text" pattern="/^[A-Za-z,]+$/" placeholder="Enter the Name of Institute" />
                     <button onclick="setValue('edu')" class="bt">Add</button>
                 </div>
             </div>
 
-            <div class="row">
-                <label class="label" for="skills">Skill</label>
-                <input id="skill"  type="text" placeholder="Enter Your Skills" />
-                <button onclick="setValue('skill')" class="bt">Add</button>
-            </div>
+            <div class="rows">
 
-            <div class="row">
-                <label class="label" for="about">About</label>
-                <input id="about"  type="text" placeholder="Enter Your About" />
-                <button onclick="setValue('about')" class="bt">Add</button>
+                <div class="row">
+                    <label class="label" for="skill">Skill</label>
+                    <input id="skill" type="text"   placeholder="Enter Your Skills" />
+                    <button onclick="setValue('skill')" class="bt">Add</button>
+                </div>
+                <div class="row">
+                    <label class="label" for="address">Address</label>
+                    <input id="address" type="text" placeholder="Enter Your Skills" />
+                    <button onclick="setValue('address')" class="bt">Add</button>
+                </div>
+
             </div>
+          
         </form>
 
-        <button  onclick="goToHome()" class="outerButton">Next</button>
+        <button onclick="goToHome()" class="outerButton">Next</button>
     </main>
 </body>
 

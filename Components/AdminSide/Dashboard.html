@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,35 +11,61 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&family=Open+Sans:wght@300&family=Poppins:wght@100;200;300;400;500&family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- <script src="./adminAuth.js"></script> -->
+    <!-- <script src="./AdminLogin.js"></script> -->
     <title>Dashboard</title>
 </head>
+
 <body>
-  <main class="main-container">
-    <header class="header">
-        <div class="logo">
-            <a href="/">Admin Dash<span>Board</span></a>
-        </div>
-        <div class="links">
-            <ul>
-                <li>
-                    <a  href="./AdminSidePages/Users.html">Users</a>
-                    <a href="./AdminSidePages/Projects.html">Projects</a>
-                    
-                </li>
-            </ul>
-        </div>
-    </header>
+    <main class="main-container">
+        <header class="header">
+            <div class="logo">
+                <a href="/">Admin Dash<span>Board</span></a>
+            </div>
+            <div class="links">
+                <ul>
+                    <li>
+                        <a href="./AdminSidePages/Users.html">Users</a>
+                        <a href="./AdminSidePages/Projects.html">Projects</a>
+                        <a href="#" id="adminLogOut">LogOut</a>
 
-    <section class="innerContainer">
-        <div class="leftSection">
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <section class="innerContainer">
+            <div class="leftSection">
                 <h1>Welcome To <mark class="mark"> Portfolio Admin</mark> Dashboard </h1>
-                <p>A portfolio is one of the best ways to showcase your work and build your brand. So, don’t ignore its power to improve your credibility. You will learn how brands put their best to stand out in these best portfolio websites.</p>
-        </div>
+                <p>A portfolio is one of the best ways to showcase your work and build your brand. So, don’t ignore its
+                    power to improve your credibility. You will learn how brands put their best to stand out in these
+                    best portfolio websites.</p>
+            </div>
 
-        <div class="rightSection">
-                <img src="../AdminSide/Assets/admin.jpg" alt="Admin">
-        </div>
-    </section>
-  </main> 
+            <div class="rightSection">
+                <img src="./assets/admin.jpg" alt="Admin">
+            </div>
+        </section>
+    </main>
+    <script>
+
+            let adminLogOut = document.getElementById('adminLogOut');
+             adminLogOut.addEventListener('click',()=>{
+                localStorage.clear()
+                window.location.assign('/Components/Login.html')
+             })
+
+                       
+    // let auth = localStorage.getItem('admin');
+    // auth = JSON.stringify(auth);
+    // if(auth){
+    //  window.location.assign('./Dashboard.html');  
+    // }
+    // else{
+    // window.location.assign("./AdminLoginPage.html");
+        
+    // }
+    </script>
 </body>
+
 </html>

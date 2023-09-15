@@ -1,20 +1,58 @@
 {
   "user": [
     {
-      "name": "Malik Ahad Ali",
-      "title": "MEAN Developer",
-      "email": "malikahad@gmail.com",
-      "number": "03184350226",
-      "address": "Lahore Cantt",
+      "name": "Malik Ahad ",
+      "email": "malikahadofficial226@gmail.com",
+      "number": "03214350226",
+      "password": "123456",
+      "role": "admin",
+      "id": 1
+    },
+    {
+      "name": "Malik Ahad Ali11",
+      "title": "vvvvvvvv",
+      "email": "malikahadofficial226@gmail.com",
+      "number": "03214350226",
+      "address": "Gulshan Ali Colony Airport Road Lahore Cantt",
       "password": "12345",
-      "about": "Hi,This is Malik Zahid Hussain.I am a MEAN Developer.I complete my graducation from lahore garission university.",
-      "projectNames": "GoFood",
-      "exp": "SeeBiz,FocusTeck",
+      "about": "Hi This is Malik ahad Ali and I am from lahore pakistan.I complete my bachelors from lahore garission university",
+      "exp": "SeeBiz,focusteck,World'sDev",
+      "skill": "HTML,CSS,JS,React Js,Tailwind CSS,Node js",
+      "edu": "matric,inter,BSCS",
+      "profileImage": "../assets/myPic.jpg",
+      "id": 2
+    },
+    {
+      "name": "Haroon Virk",
+      "title": "Developer",
+      "email": "malikahadofficial226@gmail.com",
+      "number": "03214350226",
+      "address": "Gulshan Ali Colony Airport Road Lahore Cantt",
+      "password": "ello",
+      "about": "Hi This is Ali Hassan Mughal and I am from lahore pakistan.I complete my bachelors from lahore garission university",
+      "exp": "SeeBiz,focusteck,World'sDev",
       "skill": "HTML,CSS,JS,React Js,Tailwind CSS,Node js",
       "edu": "Matric,Inter,BSCS",
       "profileImage": "../assets/myPic.jpg",
-      "id": 1
+      "id": 3
     }
   ],
-  "projects": []
+  "projects": [
+    {
+      "title": "GoFoodd",
+      "des": "I made this project using MERN Stack.In this project User Can order food.",
+      "code": "http://....................................",
+      "live": "http://....................................",
+      "imageUrl": "../assets/food.png",
+      "id": 1
+    },
+    {
+      "title": "WooDy",
+      "des": "I made it using React js, React Readux......",
+      "code": "http://..........................................",
+      "live": "http://..........................................",
+      "imageUrl": "../assets/woody.png",
+      "id": 2
+    }
+  ]
 }

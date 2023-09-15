@@ -26,9 +26,17 @@
   align-items: center;
   background: linear-gradient(to right, #00afb2, #00caac);
 }
+.addProject form{
+  width: 100%;
+}
 .project {
-  width: 50%;
+  width:90%;
   margin: 0px auto;
+}
+.rows{
+  display: flex;
+  column-gap: 20px;
+  row-gap: 10px;
 }
 .pro {
   color: white;
@@ -67,6 +75,7 @@
 .buttons {
   display: flex;
   flex-direction: row;
+  margin-top: 20px;
 }
 
 .btn {
@@ -92,7 +101,7 @@
 }
 .bt{
   width: 100px;
-  height: 20px;
+  height: 40px;
 }
 
 /* Update PRoject */
@@ -107,12 +116,27 @@
   background:#bebdbd;
   border-radius: 10px;
 }
+#updateProject h3{
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: white;
+}
 .updateFrom{
  
   width: 100%;
   padding: 0px 50px;
 }
-
+.updateProfileForm{
+  height: 600px;
+  width: 80%;
+  padding: 20px 0px;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 1;
+  top: 30px;
+  display: none;
+  background: linear-gradient(to right,var(--blue),#00afb2);
+}
 .info input{
   width: 100%;
   height: 40px;
@@ -127,4 +151,12 @@
   color: #333333;
   padding-top: 10px;
   text-align: center ;
+}
+#close{
+  font-size: 30px;
+  color: white;
+  position: absolute;
+  right: 30px;
+  top: 30PX;
+  cursor: pointer;
 }

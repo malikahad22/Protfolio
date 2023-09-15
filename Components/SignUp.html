@@ -21,17 +21,17 @@
         <form class="form">
             <div class="row">
                 <label class="label" for="name">Full Name:</label>
-                <input type="text" id="name" placeholder="Enter Your Full Name">
+                <input type="text" id="name" pattern="/^[A-Za-z]+$/" placeholder="Enter Your Full Name">
             </div>
 
             <div class="row">
                 <label class="label" for="email">Email:</label>
-                <input type="text" id="email" placeholder="Enter Your Email">
+                <input type="text" id="email" pattern="/^[a-zA-Z0-9@]+$/" placeholder="Enter Your Email">
             </div>
 
             <div class="row">
-                <label class="label" for="email">Mobile No:</label>
-                <input type="text" id="number" placeholder="Enter Your Number">
+                <label class="label" for="number">Mobile No:</label>
+                <input type="text" id="number" pattern="/^[0-9]+$/" placeholder="Enter Your Number">
             </div>
 
             
@@ -41,11 +41,11 @@
             </div>
 
             <div class="row r2">
-                <label class="label" for="email">Password:</label>
+                <label class="label" for="password">Password:</label>
                 <input type="password" id="password" placeholder="Enter Your Password">
             </div>
             <div class="row">
-                <label class="label" for="input_file">Upload Your image</label>
+                <label class="label" for="profileImage">Upload Your image</label>
                 <input type="text" id="profileImage" placeholder="Enter The Local Path of Your Image">
             </div>
             <p class="acc">Have an account ? <a href="./Login.html">LogIn</a></p>

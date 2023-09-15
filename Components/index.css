@@ -98,7 +98,6 @@
   color: white;
   font-weight: 600;
   text-transform: uppercase;
- 
 }
 .aboutContent {
   display: flex;
@@ -124,9 +123,8 @@
   margin-top: 30px;
   color: white;
   flex: 1 1 350px;
-  
 }
-.p{
+.p {
   padding: 10px 0px;
 }
 .me {
@@ -200,17 +198,19 @@
   gap: 20px;
 }
 .left {
-  width: 40%;
+  width:20%;
   flex: 1 1 350px;
+  text-overflow: clip;
   cursor: pointer;
-
-  /* border:1px solid black; */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  /* border: 1px solid black; */
 }
 .right {
   width: 60%;
   height: 300px;
   flex: 1 1 500px;
-  /* border: 1px solid black ; */
+  border: 1px solid black;
 }
 .projectImage {
   width: 100%;
@@ -224,9 +224,9 @@
 }
 #popover {
   width: 70%;
-  height: 500px;
+  /* height: 500px; */
   background-color: #00afb2;
-  position: absolute ;
+  position: absolute;
   /* visibility: hidden; */
   top: 1500px;
   left: 10%;
@@ -234,12 +234,12 @@
   z-index: 10;
   display: none;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 100px;
+  /* justify-content: center;
+  align-items: center; */
+  padding: 50px 100px;
   border-radius: 10px;
 }
-.fa-close{
+.fa-close {
   font-size: 25px;
   color: white;
   position: absolute;
@@ -247,23 +247,34 @@
   top: 20px;
   cursor: pointer;
 }
-#pop-image{
-  margin :20px 10px;
-
+#pop-image {
+  margin: 20px 10px;
 }
 #pop-image img {
   width: 100%;
   height: 300px;
 }
+.PopProjectInfo{
+  display: flex;
+  width: 100%;
+  padding-top: 10px ;
+  justify-content: space-between;
+}
 .title {
-  font-size: 20px;
-  color: #333333;
+  font-size: 30px;
+  color:#333333;
   font-weight: 800;
 }
 .text {
-  color: #575353;
-  font-size: 14px;
-  padding: 10px 20px 20px 0px;
+  color:#333333;
+  font-size: 16px;
+  width: 90%;
+  /* height: 80%; */
+  text-overflow: ellipsis;
+  padding: 10px 20px 10px 0px;
+}
+strong{
+  color:white
 }
 .text-bottom {
   display: flex;
@@ -548,7 +559,7 @@
   width: 800px;
 }
 
-#edit,
+.fa-edit,
 #del {
   color: white;
   background-color: #00afb2;
@@ -563,7 +574,69 @@
   margin-right: 10px;
   margin-top: 10px;
 }
-#edit:hover,
+.fa-edit:hover,
 #del:hover {
   transform: scale(1.05);
+}
+
+/* MAin File */
+.main-box {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.login h1 {
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, var(--blue), #00caac);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-top: 50px;
+}
+.status {
+  margin-top: 30px;
+  display: flex;
+  column-gap: 10px;
+}
+.userLogin a,
+.adminLogin a {
+  text-decoration: none;
+  font-size: 20px;
+  background: linear-gradient(to right, var(--blue), #00caac);
+  padding: 20px 115px;
+  color: white;
+  /* margin-top: 50px; */
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: 0.5s all ease-in-out;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.userLogin a:hover,
+.adminLogin a:hover {
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+.userLogin {
+  display: flex;
+  flex-direction: column;
+}
+.adminLogin {
+  display: flex;
+  flex-direction: column;
+}
+.userLogin img {
+  width: 300px;
+  object-fit: contain;
+}
+.adminLogin img {
+  width: 300px;
 }

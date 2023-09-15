@@ -12,6 +12,7 @@
     height: 100vh;
     background: linear-gradient(to right, var(--blue), #00caac);
     display: flex;
+    /* opacity: 0; */
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -25,7 +26,7 @@
 
 .form{
     width: 400px;
-    padding: 30px 15px;
+    padding: 10px 15px;
     background-color: white;
     border-radius: 5px;
     box-shadow: rgb(0,0,0,0.5) 0px 0px 15px;
@@ -70,7 +71,7 @@ input{
     margin-top: 15px;
 }
 .acc{
-    padding-top: 0px;
+    padding: 5px 0px;
 }
 .acc a {
     text-decoration: none;
@@ -86,7 +87,6 @@ input{
 
 .btn{
     width: 100%;
-    margin-top:3px;
     height: 40px;
     background: transparent;
     border: none;
@@ -118,13 +118,16 @@ input{
 .r button{
     width: 200px;
 }
+.r2{
+    margin-top: 15¦px;
+}
 
 .btn:hover{
     border-radius: 0px;
 }
 .pro{
     color: white;
-    margin-top: -80px;
+    /* margin-top: -80px; */
 }
 .outerButton{
     background: transparent;
@@ -145,17 +148,32 @@ input{
 }
 
 .btn5{
-color: white;
+color: #00afb2;
 font-size: 16px;
 font-weight: 700;
 letter-spacing: 1px;
 width:100%;
 height: 40px;
-background-color: #00caac;
+background-color: white;
 outline: none;
 border: none;
 cursor: pointer;
 margin-top: 20px;
+}
+.btn6{
+    width: 200px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    transition: all 0.5s ease-in-out;
+}
+.btn6:hover{
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.btn{
+    color: white;
+    font-weight: 800;
+    margin-top: 20px;
 }
 @media screen and (max-width:425px) {
 

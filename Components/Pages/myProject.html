@@ -21,7 +21,7 @@
     <main id="outer-container">
         <h1 id="mypro">my Projects</h1>
         <section id="projectList">
-                <!-- <div id="myProject">
+            <!-- <div id="myProject">
                 
                     <h2 id="projectTitle">GoFood</h2>
                     <p id="projectDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non optio porro tenetur quisquam? Deleniti nulla sint optio illum quibusdam molestiae?</p>
@@ -34,36 +34,53 @@
         </section>
 
         <section id="updateProject">
-                <h3>update Project</h3>
-                <i id="updateClose" class="fa fa-close"></i>
+            <h3>update Project</h3>
+            <i id="updateClose" class="fa fa-close"></i>
             <form action="" class="updateFrom">
-               <div class="row">
-                <div class="info">
-                    <label for="title">Add Project Title:</label>
-                    <input id="title" type="text" placeholder="Enter Your Project Title" />
+                <div class="rows">
+                    <div class="info">
+                        <label for="title">Add Project Title:</label>
+                        <input id="title" type="text" placeholder="Enter Your Project Title" />
+                    </div>
+
+                    <div class="info">
+                        <label for="description">Add Project Disription:</label>
+                        <input id="description" type="text" placeholder="Enter Your Project Description" />
+                    </div>
                 </div>
-    
-                <div class="info">
-                    <label for="description">Add Project Disription:</label>
-                    <input id="description" type="text" placeholder="Enter Your Project Description" />
+                <div class="rows">
+                    <div class="info">
+                        <label for="source">Source Code:</label>
+                        <input id="code" type="text" placeholder="paste url of your code" />
+                    </div>
+                    <div class="info">
+                        <label for="tags">Tags:</label>
+                        <input id="tags" type="text" placeholder="Enter Project Tags" />
+                    </div>
                 </div>
-               </div>
+              <div class="rows">
                 <div class="info">
-                    <label for="source">Source Code:</label>
-                    <input id="code" type="text" placeholder="paste url of your code" />
+                    <label for="lang">Language:</label>
+                    <input id="lang" type="text" placeholder="Enter Project Language" />
                 </div>
-    
+                <div class="info">
+                    <label for="frame">Frame:</label>
+                    <input id="frame" type="text" placeholder="Language Frame" />
+                </div>
+              </div>
+              <div class="rows">
                 <div class="info">
                     <label for="demo">See Live:</label>
                     <input id="live" type="text" placeholder="paste url of your project">
                 </div>
-    
+
                 <div class="info ">
                     <label for="upload-image">Upload Project Image:</label>
-                    <input   id="imageUrl" type="text" placeholder="Enter local path of image" />
+                    <input id="imageUrl" type="text" placeholder="Enter local path of image" />
                 </div>
+              </div>
                 <div class="buttons info">
-                    <button onclick="formHandler()" id="update" class="btn">update</button>
+                    <button id="update" class="btn">update</button>
                 </div>
             </form>
 

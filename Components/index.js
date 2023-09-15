@@ -1,3 +1,4 @@
+
 document.addEventListener("submit", function (e) {
     e.preventDefault();
 });
@@ -18,7 +19,7 @@ let user = {
     exp: [],
     edu: [],
     skill: [],
-    projects:[]
+    projects: []
 };
 
 // index File
@@ -37,16 +38,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("number").innerHTML = userData.number;
     document.getElementById("aboutMe").innerHTML = userData.about;
     document.getElementById("myPofile").src = userData.profileImage;
-    let pp = userData.projectNames;
-    console.log("Projectts",pp)
- document.getElementById("exp").innerHTML = userData.exp;
- document.getElementById("skill").innerHTML = userData.skill;
- document.getElementById("projectNames").innerHTML = userData.projectNames;
+    document.getElementById("exp").innerHTML = userData.exp;
+    document.getElementById("skill").innerHTML = userData.skill;
+    document.getElementById("edu").innerHTML = userData.edu;
 
 
-//  document.getElementById("edu").innerHTML = userData.edu;
-    let skill = document.getElementById("skill");
-    let project = document.getElementById("projectNames");
+    //  document.getElementById("edu").innerHTML = userData.edu;
+    // let skill = document.getElementById("skill");
+    // let project = document.getElementById("projectNames");
     //Setting Experience of About Section
     // for (let a = 0; a < userData.exp.length; a++) {
     //     const list = document.createElement("li");
@@ -72,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to display projects based on search value
     function displayProjects(searchValue) {
+        // console.log(searchValue)
         let parentElement = document.getElementById("p1");
 
         // Clear previous search results
@@ -80,11 +80,31 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch("http://localhost:3000/projects")
             .then((resp) => resp.json())
             .then((res) => {
+                //    filterData =  res.map((i)=>{
+                //         console.log(i.id)
+                //         if(i.id === userData.id){
+                //             return i;
+                //         }
+                //         else{
+                //             console.log("Not Found")
+                //         }
+                //     })
+
                 if (searchValue === "") {
                     filterData = res;
-                } else {
+                    
+                }
+                else {
                     filterData = res.filter(
-                        (f) => f.title.toLowerCase() === searchValue.toLowerCase()
+                        (f) => {
+
+                            if (f.title === searchValue||
+                                f.frame === searchValue ||
+                                f.lang === searchValue
+                            ) {
+                                return f;
+                            }
+                        }
                     );
                 }
                 if (filterData.length === 0) {
@@ -104,11 +124,17 @@ document.addEventListener("DOMContentLoaded", () => {
                         let leftParent = document.getElementById(`left-side${a}`);
                         leftParent.setAttribute('onclick', `leftSide(${a})`);
                         let click = document.getElementById(`left-side${a}`);
+
+                        // Setting Project POPUp Information
                         click.addEventListener('click', () => {
                             console.log(filterData[eventId])
-                            document.getElementById('pop-title').innerHTML = filterData[eventId].title
+                            document.getElementById('pop-title').innerHTML = filterData[eventId].title //Here Event Id is the Global Id which hold id of clicked Project
+                            document.getElementById('pop-dev').innerHTML = filterData[eventId].dev;
                             document.getElementById('pop-desciption').innerHTML = filterData[eventId].des;
-                            document.getElementById('img1').src = filterData[eventId].img
+                            document.getElementById('img1').src = filterData[eventId].imageUrl
+                            document.getElementById('pop-tags').innerHTML = filterData[eventId].tags
+                            document.getElementById('pop-lang').innerHTML = filterData[eventId].lang
+                            document.getElementById('pop-frame').innerHTML = filterData[eventId].frame
                             popover.style.display = 'flex'
                         })
 
@@ -148,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         rightNode.className = "right";
                         let image = document.createElement("img");
                         image.className = "projectImage";
-                        image.setAttribute("src", filterData[a].img);
+                        image.setAttribute("src", filterData[a].imageUrl);
                         rightNode.appendChild(image);
                         parentElement.appendChild(rightNode);
 
@@ -171,8 +197,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Search button click event listener
-    let searchIcon = document.getElementById("searchIcon");
-    searchIcon.addEventListener("click", () => {
+    let searchIcon = document.getElementById("search");
+    searchIcon.addEventListener("change", () => {
         let searchValue = document.getElementById("search").value;
         displayProjects(searchValue);
     });
@@ -189,11 +215,32 @@ function getLogInData() {
     password = document.getElementById("password").value;
     fetch("http://localhost:3000/user").then((resp) => {
         resp.json().then((result) => {
+
             for (let i = 0; i < result.length; i++) {
-                if (result[i].email === email && result[i].password === password) {
+
+                if ((result[i].email === email && result[i].password === password && result[i].role === "admin")) {
+                    let adminEmail = document.getElementById('email').value;
+                    let adminpassword = document.getElementById('password').value;
+                    let adminLogin = { adminEmail, adminpassword }
+                    adminLogin = JSON.stringify(adminLogin);
+                    localStorage.setItem('admin', adminLogin)
+                    window.location.assign("/Components/AdminSide/Dashboard.html");
+                }
+                else if ((email === result[i].email && password === result[i].password)) {
                     let jsonData = JSON.stringify(result[i]);
                     localStorage.setItem("user", jsonData);
                     window.location.assign("/Components/index.html");
+                }
+
+                else if (email === "" || password === "") {
+                    alert("Please Fill All Fields")
+                }
+
+                else if ((email !== result[i].email && password !== result[i].password)) {
+                    alert("Please Enter Correct Data");
+                }
+                else {
+
                 }
             }
         });
@@ -215,7 +262,7 @@ function getSignUpData() {
     address = document.getElementById("address").value;
     profileImage = document.getElementById("profileImage").value;
     let data = { name, email, number, password, address, profileImage };
-    if (name === "" || email === "" || number === "" || password === "" || address===""  || profileImage==="" ) {
+    if (name === "" || email === "" || number === "" || password === "" || address === "" || profileImage === "") {
         alert("Please Fill all Fields");
     } else {
         const jsonData = JSON.stringify(data);
@@ -238,9 +285,9 @@ function goToHome() {
         user.exp === "" ||
         user.skill === "" ||
         user.edu === "" ||
-        user.about === ""||
-        user.profileImage ===""
-        
+        user.about === "" ||
+        user.profileImage === ""
+
     ) {
         alert("Please Fill All Fields");
     } else {
@@ -258,14 +305,14 @@ function goToHome() {
         window.location.assign("/Components/Login.html");
     }
 }
-function setValue(val) {
+function setValue(val) { //Setting PRofile Form Values
     if (val === "title") {
-     
-        user.title =document.getElementById("title").value;
+
+        user.title = document.getElementById("title").value;
         document.getElementById("title").value = "";
     } else if (val === "project") {
-        user.projectNames.push(document.getElementById("project").value);
-        document.getElementById("project").value = "";
+        user.projectNames.push(document.getElementById("projectNames").value);
+        document.getElementById("projectNames").value = "";
     } else if (val === "exp") {
         user.exp.push(document.getElementById("exp").value);
         document.getElementById('exp').value = "";
@@ -278,6 +325,10 @@ function setValue(val) {
     } else if (val === "about") {
         user.about = document.getElementById("about").value;
         document.getElementById("about").value = "";
+    }
+    else if (val === "address") {
+        user.address = document.getElementById("address").value;
+        document.getElementById("address").value = "";
     } else {
         alert("enter right data");
     }
@@ -303,44 +354,55 @@ function setValue(val) {
 //         })
 //     })
 // }
-var tags = [];
-function setTag() {
-    let tagVal = document.getElementById('tags').value;
-    tags.push(tagVal);
-    document.getElementById('tags').value = "";
-    console.log(tags);
-}
+
+
+// Add Projects
 function addProject() {
     let title;
     let des;
     let code;
     let live;
-    var img;
+    var imageUrl;
+    let lang;
     let frame;
-
+    let dev;
+    let tags;
     title = document.getElementById("title").value;
     des = document.getElementById("description").value;
     code = document.getElementById("code").value;
     live = document.getElementById("live").value;
-    img = document.getElementById("input_file").value;
+    tags = document.getElementById("tags").value;
+    imageUrl = document.getElementById("input_file").value;
     frame = document.getElementById("framework").value;
+    lang = document.getElementById("language").value;
+    dev = document.getElementById('developer').value
 
+    let data = { title, des, code, live, imageUrl, frame, tags, lang, dev };
+    if (title === "" || des === "" || code === "" || live === "" || imageUrl === "" || frame === "" || tags.length === 0 || lang === "" || dev === "") {
+        alert("Please Enter The Required Fields")
+    }
+    else {
+        fetch("http://localhost:3000/projects", {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then((resp) => {
+            resp.json().then((result) => {
+                console.log(result)
+            })
 
-
-    let data = { title, des, code, live, img, frame,tags };
-    console.log(data)
-    fetch("http://localhost:3000/projects", {
-        method: "POST",
-        headers: {
-            "content-type": "application/json",
-        },
-        body: JSON.stringify(data),
-    }).then((resp) => {
-        resp.json().then((result) => {
-            console.log(result);
         });
-    });
+        alert("Project added successfully!");
+
+
+    }
+
 }
+
+
+// After  Adding Project USer Will Redirect to Main Page
 function goHome() {
     window.location.assign("/Components/index.html");
 }

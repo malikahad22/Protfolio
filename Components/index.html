@@ -12,6 +12,8 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="./index.js"></script>
+    <!-- <script src="./auth.js"></script> -->
+
     <title>Malik Ahad Ali</title>
 </head>
 
@@ -28,7 +30,7 @@
                         <li><a href="../Components//Pages/AddProject.html">Add Projects</a></li>
                         <li><a href="../Components/Pages/updateProfile.html">update Profile</a></li>
                         <li><a href="../Components/Pages/myProject.html">My Projects</a></li>
-                        <li><a href="../Components//AdminSide//Dashboard.html">Admin Panel</a></li>
+                        <!-- <li><a href="./AdminSide/AdminLoginPage.html">Admin Panel</a></li> -->
                         <li><a class="logout" onclick="logout()">LogOut</a></li>
 
                     </ul>
@@ -40,8 +42,8 @@
         <section class="section-1">
             <div class="text-box">
                 <p>
-                    Hi,my name is <mark id="Name"> Malik Ahad Ali </mark><br />
-                    I'm the <span id="T">Full Stack Developer</span>.
+                    Hi,my name is <mark id="Name"></mark><br />
+                    I'm the <span id="T"></span>.
                 </p>
             </div>
             <div>
@@ -55,20 +57,19 @@
                 <h2 class="about">About Me</h2>
                 <div class="aboutContent">
                     <figure class="img">
-                        <img id="myPofile" src="../assets/myPic.jpg" alt="About Me" />
+                        <img id="myPofile" src="" alt="About Me" />
                     </figure>
 
                     <div class="about-me">
-                        <p class="p" id="aboutMe" class="me">Hi, This is Malik Ahad Ali. I am recently graduated from Lahore
-                            Garission
-                            University.I have complete knowledge of HTML,CSS,tailwind Css,JS, React JS, Node JS,mongodb.
+                        <p class="p" id="aboutMe" class="me">
+
                         </p>
-                        <p class="p"><strong>Email : </strong><span id="email">malikahadofficial226@gmail.com</span></p>
-                        <p class="p"><strong>Mobile : </strong><span id="number">0321-4350226</span></p>
+                        <p class="p"><strong>Email : </strong><span id="email"></span></p>
+                        <p class="p"><strong>Mobile : </strong><span id="number"></span></p>
                         <p class="p"><strong>Experience : </strong><span id="exp"></span></span></p>
                         <p class="p"><strong>Skills : </strong><span id="skill"></span></p>
-                        <p class="p"><strong>Projects : </strong><span id="projectNames"></span></p>
-                        <p class="address"><strong>Address :</strong> <span id="address">Lahore Cantt</span></p>
+                        <p class="p"><strong>Education : </strong><span id="edu"></span></p>
+                        <p class="address"><strong>Address :</strong> <span id="address"></span></p>
                         <a href="https://drive.google.com/file/d/1De472ifom-GjweSWkzwUEDpKenUOSOrW/view?usp=sharing"
                             class="btn1">View Resume</a>
                     </div>
@@ -83,7 +84,7 @@
                 <div class="Projects">
                     <!-- Project 1 -->
                     <div class="searchBar">
-                        <input id="search" type="text" placeholder="Search Your Project By Name">
+                        <input id="search" type="text" placeholder="Search Your Project By Name, Frame , Language">
                         <i id="searchIcon" class="fa fa-search searchIcon"></i>
                     </div>
                     <div id="p1" class="project">
@@ -94,15 +95,23 @@
 
                 </div>
             </section>
+            <!-- Popover Section -->
             <section id="popover">
                 <i id="close" class="fa fa-close"></i>
                 <div id="pop-image">
-                    <img id="img1" src="../assets/food.png" alt="">
+                    <img id="img1" src="" alt="">
                 </div>
                 <div>
-                    <p class="title" id="pop-title">GoFood</p>
-                    <p class="text" id="pop-desciption">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-                        error consectetur commodi hic animi debitis? Atque beatae minima necessitatibus. Nostrum.</p>
+                    <p class="title" id="pop-title"></p>
+                    <p class="text" id="pop-desciption"></p>
+                    <p> <strong>Developer:</strong> <span class="pop-dev" id="pop-dev"></span></p>
+                     
+                </div>
+
+                <div class="PopProjectInfo">
+                    <p><strong>Tags:</strong>  <span class="pop-tags" id="pop-tags"></span></p>
+                    <p><strong>Language:</strong>  <span class="pop-lang" id="pop-lang"></span></p>
+                    <p><strong>Frame:</strong>  <span class="pop-tags" id="pop-frame"></span></p>
                 </div>
 
             </section>

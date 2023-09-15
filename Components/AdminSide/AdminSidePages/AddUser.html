@@ -10,33 +10,33 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&family=Open+Sans:wght@300&family=Poppins:wght@100;200;300;400;500&family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="../index.css">
-    <link rel="stylesheet" href="../Pages/updateProfile.css">
-    <link rel="stylesheet" href="../Form.css">
-    <script src="../Pages//updateProfile.js"></script>
-    <title>Update Profile</title>
+    <link rel="stylesheet" href="../../index.css">
+    <link rel="stylesheet" href="../../Pages/updateProfile.css">
+    <link rel="stylesheet" href="../../Form.css">
+    <script src="../AdminSidePages/AddUSer.js"></script>
+    <title>Add Profile</title>
 </head>
 
 <body>
     <main class="main-container">
-        <h1 class="updateHeading">Update Profile</h1>
+        <h1 class="updateHeading">Add New User Profile</h1>
         <form class="updater">
             <div class="rows">
                 <div class="row">
                     <label class="label" for="name">Full Name:</label>
-                    <input type="text" id="name" pattern="/^[A-Za-z]+$/" placeholder="Enter Your Full Name">
+                    <input type="text" id="name" pattern=" (/^[A-Za-z]+$/)" placeholder="Enter Your Full Name">
                 </div>
 
                 <div class="row">
                     <label class="label" for="email">Email:</label>
-                    <input type="text" id="email"  pattern="/^[a-zA-Z0-9@]+$/" placeholder="Enter Your Email" />
+                    <input type="text" id="email" pattern="/^[a-zA-Z0-9@]+$/" placeholder="Enter Your Email" />
                 </div>
             </div>
 
             <div class="rows">
                 <div class="row">
                     <label class="label" for="number">Mobile No:</label>
-                    <input type="text" id="number" pattern="/^[0-9]+$/" placeholder="Enter Your Number">
+                    <input type="text" id="number"  pattern="/^[0-9]+$/" placeholder="Enter Your Number">
                 </div>
 
 
@@ -49,12 +49,12 @@
             <div class="rows">
 
                 <div class="row  r2">
-                    <label class="label" for="password">Password:</label>
+                    <label class="label" for="email">Password:</label>
                     <input type="password" id="password" placeholder="Enter Your Password">
                 </div>
 
                 <div class="row  r2">
-                    <label class="label" for="profileImage">Profile Image:</label>
+                    <label class="label" for="email">Profile Image:</label>
                     <input type="text" id="profileImage" placeholder="Enter Path For Profile Image">
                 </div>
             </div>
@@ -87,10 +87,10 @@
 
                 <div class="row">
                     <label class="label" for="about">About</label>
-                    <input id="about" type="text" pattern="/^[a-zA-Z0-9@]+$/" placeholder="Enter Your About" />
+                    <input id="about" type="text" pattern="/^[A-Za-z]+$/" placeholder="Enter Your About" />
                 </div>
             </div>
-            <input type="submit" class="btn5" id="updateProfile" value="Update Record"/>
+            <input type="submit" value="Add User" class="btn5 btn6" id="addUser"> <!-- Design in Dashboard CSS--> 
         </form>
     </main>
 </body>

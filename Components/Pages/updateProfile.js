@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var data = localStorage.getItem('user');
     data = JSON.parse(data);
 
-    // PreFill Form Data
+    // PreFill Update Profile Form Data
     fetch('http://localhost:3000/user').then((resp) => {
         resp.json().then((res) => {
             res.forEach(element => {
@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         document.getElementById('address').value = element.address;
                         document.getElementById('password').value = element.password;
                         document.getElementById('title').value = element.title;
-                        document.getElementById('project').value = element.projectNames;
                         document.getElementById('profileImage').value = element.profileImage;
                         document.getElementById('exp').value = element.exp;
                         document.getElementById('skill').value = element.skill;
@@ -30,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Updating Profile Data
     let updateProfile = document.getElementById('updateProfile');
+    console.log(updateProfile)
     updateProfile.addEventListener('click',(e)=>{
         e.preventDefault()
         let name =document.getElementById('name').value 
@@ -40,11 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let password =document.getElementById('password').value; 
         let profileImage =document.getElementById('profileImage').value; 
         let about =document.getElementById('about').value 
-        let projectNames =document.getElementById('project').value 
         let exp =document.getElementById('exp').value 
         let skill =document.getElementById('skill').value 
         let edu =document.getElementById('edu').value
-        updateUser ={name,title,email,number,address,password,about,projectNames,exp,skill,edu,profileImage};
+        updateUser ={name,title,email,number,address,password,about,exp,skill,edu,profileImage};
         console.log(updateUser) 
         localStorage.setItem('user',updateUser)
         fetch(`http://localhost:3000/user/${data.id}`,{
@@ -66,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             })
                         })
                         localStorage.clear();
-                        window.location.assign('/Components/Login.html');
+                        window.location.assign('/Components/index.html');
     })
     // End of Main
 });
