@@ -9,7 +9,7 @@
       "id": 1
     },
     {
-      "name": "Malik Ahad Ali11",
+      "name": "Malik Ahad Ali",
       "title": "vvvvvvvv",
       "email": "malikahadofficial226@gmail.com",
       "number": "03214350226",
@@ -43,6 +43,10 @@
       "des": "I made this project using MERN Stack.In this project User Can order food.",
       "code": "http://....................................",
       "live": "http://....................................",
+      "tags": "Ecommerce",
+      "lang": "Javascript",
+      "frame": "React",
+      "dev":"Malik Ahad",
       "imageUrl": "../assets/food.png",
       "id": 1
     },
@@ -53,6 +57,17 @@
       "live": "http://..........................................",
       "imageUrl": "../assets/woody.png",
       "id": 2
+    },
+    {
+      "title": "CoffeeMachine",
+      "des": "jksldafdsklafjsdlfkdjslfjsklfjksdflsdjflsdkfjsklfjsdklfjsdklfjsdjfsdklfjsdklfsdkfluweiorweiotsdkfljkncxm,cnzx,mvkfjwelj",
+      "code": "lfasdklfjsklflsdjfksl",
+      "live": "lfsjkfsjdlfjlksdjf",
+      "tags": "website",
+      "lang": "React",
+      "frame": "React",
+      "imageUrl": "../assets/CoffeeBot.png",
+      "id": 3
     }
   ]
 }

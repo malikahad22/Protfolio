@@ -198,26 +198,16 @@ document.addEventListener("DOMContentLoaded", (e) => {
                     // console.log(element)
                     if (filterData[a].id === element.id) {
                       document.getElementById("username").value = element.name;
-                      document.getElementById("useremail").value =
-                        element.email;
-                      document.getElementById("usernumber").value =
-                        element.number;
-                      document.getElementById("useraddress").value =
-                        element.address;
-                      document.getElementById("userpassword").value =
-                        element.password;
-                      document.getElementById("usertitle").value =
-                        element.title;
-                      document.getElementById("userproject").value =
-                        element.projectNames;
-                      document.getElementById("userprofileImage").value =
-                        element.profileImage;
+                      document.getElementById("useremail").value = element.email;
+                      document.getElementById("usernumber").value = element.number;
+                      document.getElementById("useraddress").value = element.address;
+                      document.getElementById("userpassword").value =element.password;
+                      document.getElementById("usertitle").value =element.title;
+                      document.getElementById("userprofileImage").value = element.profileImage;
                       document.getElementById("userexp").value = element.exp;
-                      document.getElementById("userskill").value =
-                        element.skill;
+                      document.getElementById("userskill").value =element.skill;
                       document.getElementById("useredu").value = element.edu;
-                      document.getElementById("userabout").value =
-                        element.about;
+                      document.getElementById("userabout").value = element.about;
                     }
                   });
                 });

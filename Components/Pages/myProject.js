@@ -83,7 +83,6 @@ updateCloser.addEventListener("click", () => {
 
 // UPDATE PROJECT
 function updateProject(id){
-    alert(id)
     var globalId;
     fetch('http://localhost:3000/projects').then((resp)=>{
             resp.json().then((r)=>{
@@ -97,6 +96,7 @@ function updateProject(id){
                         document.getElementById("lang").value = i.lang;
                         document.getElementById("frame").value = i.frame;
                         document.getElementById("live").value = i.live;
+                        document.getElementById("developer").value = i.dev;
                         document.getElementById("imageUrl").value = i.imageUrl;
                     }
                 });
@@ -117,12 +117,20 @@ function updateProject(id){
         let code = document.getElementById("code").value;
         let live = document.getElementById("live").value;
         let imageUrl = document.getElementById("imageUrl").value;
+        let tags = document.getElementById("tags").value;
+        let lang = document.getElementById("lang").value;
+       let frame =  document.getElementById("frame").value;
+       let dev =  document.getElementById("developer").value;
 
         let updateData = {
             title,
             des,
             code,
             live,
+            tags,
+            lang,
+            frame,
+            dev,
             imageUrl
         };
 
