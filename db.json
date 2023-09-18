@@ -10,7 +10,7 @@
     },
     {
       "name": "Malik Ahad Ali",
-      "title": "vvvvvvvv",
+      "title": "MERN Stack Developer",
       "email": "malikahadofficial226@gmail.com",
       "number": "03214350226",
       "address": "Gulshan Ali Colony Airport Road Lahore Cantt",
@@ -35,6 +35,20 @@
       "edu": "Matric,Inter,BSCS",
       "profileImage": "../assets/myPic.jpg",
       "id": 3
+    },
+    {
+      "name": "Malik Daud Ahmad",
+      "title": "MERN Developer",
+      "email": "malikdaud@gmail.com",
+      "number": "03184350226",
+      "address": "Lahore Cantt",
+      "password": "12345",
+      "about": "Hi,This is Malik Daud Ahmad and I am  a mern stack develper.I have expertise in web development.I complete my bachelors from  lahore garrision university.",
+      "exp": "FocusTeck,SeeBiz",
+      "skill": "HTML,CSS,JS,React Js,Tailwind CSS,Node js,MongoDb,mySQL",
+      "edu": "BSCS",
+      "profileImage": "../assets/myPic.jpg",
+      "id": 4
     }
   ],
   "projects": [
@@ -46,28 +60,18 @@
       "tags": "Ecommerce",
       "lang": "Javascript",
       "frame": "React",
-      "dev":"Malik Ahad",
+      "dev": "Malik Ahad Ali",
       "imageUrl": "../assets/food.png",
       "id": 1
     },
     {
       "title": "WooDy",
+      "dev": "Malik Ahad Ali",
       "des": "I made it using React js, React Readux......",
       "code": "http://..........................................",
       "live": "http://..........................................",
       "imageUrl": "../assets/woody.png",
       "id": 2
-    },
-    {
-      "title": "CoffeeMachine",
-      "des": "jksldafdsklafjsdlfkdjslfjsklfjksdflsdjflsdkfjsklfjsdklfjsdklfjsdjfsdklfjsdklfsdkfluweiorweiotsdkfljkncxm,cnzx,mvkfjwelj",
-      "code": "lfasdklfjsklflsdjfksl",
-      "live": "lfsjkfsjdlfjlksdjf",
-      "tags": "website",
-      "lang": "React",
-      "frame": "React",
-      "imageUrl": "../assets/CoffeeBot.png",
-      "id": 3
     }
   ]
 }

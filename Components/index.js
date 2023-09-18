@@ -25,10 +25,16 @@ let user = {
 // index File
 function logout() {
     localStorage.clear();
+    sessionStorage.clear();
     window.location.assign("/Components/Login.html");
+
+
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+
+
+
     // About Section
     let userData = JSON.parse(localStorage.getItem("user"));
     document.getElementById("T").innerHTML = userData.title;
@@ -90,18 +96,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 //         }
                 //     })
 
+                // Will Display Only LoggedIn User
+                let dev = localStorage.getItem('user', user);
+                dev = JSON.parse(dev)
                 if (searchValue === "") {
-                    filterData = res;
-                    
+
+                    filterData = res.filter((i) => {
+                        if (i.dev === dev.name) { // compaIRING DEVELOPER naME AND lOGgED in USER
+                            return i;
+                        }
+                    });
+
                 }
                 else {
+
                     filterData = res.filter(
                         (f) => {
 
-                            if (f.title === searchValue||
+                            if ((f.title === searchValue ||
                                 f.frame === searchValue ||
-                                f.lang === searchValue
+                                f.lang === searchValue)
                             ) {
+                                alert()
                                 return f;
                             }
                         }
@@ -127,7 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         // Setting Project POPUp Information
                         click.addEventListener('click', () => {
-                            console.log(filterData[eventId])
                             document.getElementById('pop-title').innerHTML = filterData[eventId].title //Here Event Id is the Global Id which hold id of clicked Project
                             document.getElementById('pop-dev').innerHTML = filterData[eventId].dev;
                             document.getElementById('pop-desciption').innerHTML = filterData[eventId].des;
@@ -209,6 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // LoginFile
 function getLogInData() {
+
     let email;
     let password;
     email = document.getElementById("email").value;
@@ -223,12 +239,14 @@ function getLogInData() {
                     let adminpassword = document.getElementById('password').value;
                     let adminLogin = { adminEmail, adminpassword }
                     adminLogin = JSON.stringify(adminLogin);
-                    localStorage.setItem('admin', adminLogin)
+                    localStorage.setItem('admin', adminLogin);
                     window.location.assign("/Components/AdminSide/Dashboard.html");
                 }
                 else if ((email === result[i].email && password === result[i].password)) {
                     let jsonData = JSON.stringify(result[i]);
                     localStorage.setItem("user", jsonData);
+                    sessionStorage.setItem('LoggedIn', true)
+
                     window.location.assign("/Components/index.html");
                 }
 
@@ -237,7 +255,7 @@ function getLogInData() {
                 }
 
                 else if ((email !== result[i].email && password !== result[i].password)) {
-                    alert("Please Enter Correct Data");
+                    // alert("Please Enter Correct Data");
                 }
                 else {
 
@@ -267,6 +285,7 @@ function getSignUpData() {
     } else {
         const jsonData = JSON.stringify(data);
         localStorage.setItem("user", jsonData);
+        sessionStorage.setItem('LoggedIn');
         window.location.assign("Pages/profile.html");
     }
 }
@@ -299,7 +318,7 @@ function goToHome() {
             body: JSON.stringify(user),
         }).then((resp) => {
             resp.json().then((result) => {
-                console.log(result);
+                // console.log(result);
             });
         });
         window.location.assign("/Components/Login.html");
@@ -390,7 +409,7 @@ function addProject() {
             body: JSON.stringify(data)
         }).then((resp) => {
             resp.json().then((result) => {
-                console.log(result)
+                // console.log(result)
             })
 
         });

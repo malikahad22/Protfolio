@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    var updateUser ={};
+    var updateUser;
     var data = localStorage.getItem('user');
     data = JSON.parse(data);
-
+    var id=data.id;
     // PreFill Update Profile Form Data
     fetch('http://localhost:3000/user').then((resp) => {
         resp.json().then((res) => {
@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Updating Profile Data
     let updateProfile = document.getElementById('updateProfile');
-    console.log(updateProfile)
     updateProfile.addEventListener('click',(e)=>{
         e.preventDefault()
         let name =document.getElementById('name').value 
@@ -43,10 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let exp =document.getElementById('exp').value 
         let skill =document.getElementById('skill').value 
         let edu =document.getElementById('edu').value
-        updateUser ={name,title,email,number,address,password,about,exp,skill,edu,profileImage};
-        console.log(updateUser) 
-        localStorage.setItem('user',updateUser)
-        fetch(`http://localhost:3000/user/${data.id}`,{
+        updateUser ={name,title,email,number,address,password,about,exp,skill,edu,profileImage,id};
+        updateUser = JSON.stringify(updateUser);
+        localStorage.setItem('user',updateUser);
+        updateUser = JSON.parse(updateUser)
+        fetch(`http://localhost:3000/user/${id}`,{
                             method:'PUT',
                             headers:{
                                 'content-type':'application/json'
@@ -64,9 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                     // })
                             })
                         })
-                        localStorage.clear();
+                        
                         window.location.assign('/Components/index.html');
     })
-    // End of Main
 });
 
